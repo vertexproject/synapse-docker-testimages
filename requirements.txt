@@ -5,6 +5,8 @@ pyOpenSSL>=16.2.0
 msgpack-python>=0.4.2
 # Delayed import
 psycopg2
+# Code style checks
+pycodestyle
 # Test related packages
 coverage
 coveralls
