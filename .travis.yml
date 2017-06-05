@@ -1,0 +1,13 @@
+language: bash
+services: docker
+
+#install:
+#  - git clone -v https://github.com/vertexproject/synapse.git /tmp/synapse
+
+script:
+  - docker build -f ./python36/Dockerfile ./python36 | tee build_log.txt
+  - IMAGE_ID=`grep "Successfully built" build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
+  - docker run $IMAGE_ID python -c "import msgpack; print(msgpack)"
+  - docker run $IMAGE_ID python -c "import tornado; print(tornado)"
+  - docker run $IMAGE_ID python -c "import psycopg2; print(psycopg2)"
+  - docker run $IMAGE_ID python -c "import cryptography; print(cryptography)"
