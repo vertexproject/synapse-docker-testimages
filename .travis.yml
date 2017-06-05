@@ -6,8 +6,12 @@ services: docker
 
 script:
   - docker build -f ./python36/Dockerfile ./python36 | tee build_log.txt
-  - IMAGE_ID=`grep "Successfully built" build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
+  - export IMAGE_ID=`grep "Successfully built" build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
   - docker run $IMAGE_ID python -c "import msgpack; print(msgpack)"
   - docker run $IMAGE_ID python -c "import tornado; print(tornado)"
   - docker run $IMAGE_ID python -c "import psycopg2; print(psycopg2)"
   - docker run $IMAGE_ID python -c "import cryptography; print(cryptography)"
+  - python test/rewrite_dockerfile.py
+  - docker build -f test/Dockerfile ./test | tee test_build_log.txt
+  - export TEST_IMAGE_ID=`grep "Successfully built" build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
+  - docker run $TEST_IMAGE_ID
