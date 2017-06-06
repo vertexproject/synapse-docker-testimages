@@ -13,5 +13,4 @@ Builds
 .. _travisci: https://travis-ci.org/vertexproject/synapse-docker-testimages
 
 .. |pyupio| image:: https://pyup.io/repos/github/vertexproject/synapse-docker-testimages/shield.svg
-     :target: https://pyup.io/repos/github/vertexproject/synapse-docker-testimages/
-     :alt: Updates
+.. _pyupio: https://pyup.io/repos/github/vertexproject/synapse-docker-testimages/
