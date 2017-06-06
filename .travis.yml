@@ -13,6 +13,6 @@ script:
   - docker run $IMAGE_ID python -c "import cryptography; print(cryptography)"
   - python test/rewrite_dockerfile.py
   - docker build -f test/Dockerfile ./test | tee test_build_log.txt
-  - export TEST_IMAGE_ID=`grep "Successfully built" build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
+  - export TEST_IMAGE_ID=`grep "Successfully built" test_build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
   - echo "Running tests from ${TEST_IMAGE_ID}"
   - docker run --rm ${TEST_IMAGE_ID} 2>&1
