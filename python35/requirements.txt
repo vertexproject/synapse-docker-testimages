@@ -1,6 +1,6 @@
 # Required packages  for synapse
 tornado==4.5.1
-cryptography==2.0
+cryptography==2.0.2
 pyOpenSSL==17.2.0
 msgpack-python==0.4.8
 xxhash==1.0.1
