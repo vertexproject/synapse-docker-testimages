@@ -34,4 +34,3 @@ ENV LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8" LC_ALL="en_US.UTF-8"
 RUN mkdir -p /opt/reqs/build/
 COPY requirements.txt /opt/reqs/build/requirements.txt
 RUN pip install -r /opt/reqs/build/requirements.txt
-git
