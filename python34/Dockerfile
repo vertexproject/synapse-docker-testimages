@@ -16,7 +16,7 @@ RUN set -ex \
     && apt-get clean \
     && apt-get update \
     && apt-get -y upgrade \
-    && apt-get install -y build-essential libffi-dev libssl-dev libpq-dev locales cron\
+    && apt-get install -y build-essential libffi-dev libssl-dev libpq-dev locales cron git\
     && apt-get clean && apt-get purge \
     && rm -rf /var/lib/apt/lists/* \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
