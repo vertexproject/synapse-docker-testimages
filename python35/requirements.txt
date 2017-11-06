@@ -6,7 +6,7 @@ msgpack-python==0.4.8
 xxhash==1.0.1
 lmdb==0.93
 # Delayed import
-psycopg2==2.7.3.1
+psycopg2==2.7.3.2
 # Dynmod loaded by link
 paramiko==2.3.1
 # Code style checks
