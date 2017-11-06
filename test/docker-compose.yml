@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  local-psql:
+  local-psql-test:
     image: postgres:9.6
     ports:
       - 5432:5432
