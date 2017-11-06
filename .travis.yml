@@ -18,5 +18,5 @@ script:
   - export TEST_IMAGE_ID=`grep "Successfully built" test_build_log.txt | grep -v "msgpack" | cut -f 3 -d " "`
   - echo "Running tests from ${TEST_IMAGE_ID}"
   - docker-compose -f ./test/docker-compose.yml up -d
-  - docker run --rm -e --network host "SYN_TEST_PG_DB=postgres:hehe@localhost:5432/syn_test" ${TEST_IMAGE_ID} 2>&1
+  - docker run --rm --network host -e "SYN_TEST_PG_DB=postgres:hehe@localhost:5432/syn_test" ${TEST_IMAGE_ID} 2>&1
   - docker-compose -f ./test/docker-compose.yml down
