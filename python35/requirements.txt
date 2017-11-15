@@ -15,7 +15,7 @@ pycodestyle==2.3.1
 # Test related packages
 coverage==4.3.4 # pyup: ignore
 codecov==2.0.9
-pytest==3.2.3
+pytest==3.2.5
 pytest-cov==2.5.1
 pytest-xdist==1.20.1
 # Legacy test packages - nose is included but no longer used by Synapse.
